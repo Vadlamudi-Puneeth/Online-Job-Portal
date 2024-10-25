@@ -1,0 +1,190 @@
+body{
+    /* background-color:#00CED1; */
+    background-color:white;
+}
+
+.btnlog{
+    margin-left:73%;
+    margin-top: -60px;
+}
+
+.btnreg{
+    margin-top:-70px;
+    margin-left: 85%; 
+}
+
+button{
+    border-radius: 30px;
+    font-size:15px;
+    padding:5px 5px;
+    color:black;
+    transition: background-color 0.3s ease;
+    cursor:pointer;
+    font:bold;
+    background-color: white;
+    border:none;
+}
+
+#hlog{
+    height:40px;
+    width:120px;
+    margin-left:20%;
+}
+
+#hreg{
+    height:40px;
+    width:120px;
+    margin-top:30px;
+    margin-left:15%;
+}
+
+button:hover {
+    background-color: #00CED1 ; /*#39FF14*/
+    color: black;
+}
+
+.imgonly{
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+    font-family: Calibri;
+    height: 28px;
+}
+
+#workfolio{
+    color:black;
+    font-size:28px;
+}
+
+img{
+    height: 38px;
+    width: 38px;
+    top:0;
+    color:#ECA427;
+    margin-left: 10px;
+}
+
+h2{
+    top: 50px;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 30px;
+    color:white;
+}
+
+.quotecontent{
+    margin-top:100px;
+    margin-left:60px;
+    margin-right:20px;
+}
+
+#quote{
+    font-size: 60px;
+    font-family:perpetua;
+    /* color:#E0FFFF; */
+    color:black;
+    text-align:center;
+}
+
+.rightcontent{
+    color:black;
+    margin-top:40px;
+    margin-left: 320px;
+    margin-right: 170px;
+    display:flex;
+}
+
+.getstarted{
+    margin-top:30px;
+    margin-left:40%;
+}
+
+#get {
+    background-color: #00CED1;
+    color:black;
+    font-family:Oblique;
+    font-size:22px;
+    max-width: 350px; 
+    width: 100%; 
+}
+
+.footer{
+    margin-top:161px;
+    height: 120px;
+    background-color:#00CED1;
+}
+
+.copyright{
+    margin-left:20px;
+}
+
+#twitter{
+    fill:#1DA1F2;
+    margin-left:10px;
+}
+
+#fb{
+    margin-left:15px;
+    fill:#1877F2;
+    color:red;
+}
+
+#linked{
+    margin-left:15px;
+    fill: #0072b1;
+}
+
+.company{
+    margin-left:40%;
+    margin-top:-70px;
+}
+.aboutus {
+    margin-left: 30%;
+    margin-top: -5%;
+}
+
+#btnabout {
+    width: 150px;
+    background-color: #00CED1;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+#btnabout:hover {
+    background-color: white;
+    color:black; 
+}
+
+.contactus {
+    margin-left: 45%;
+    margin-top: -4.6%;
+}
+
+#btncontact {
+    width: 150px;
+    background-color: #00CED1;
+    color: black;
+    transition: background-color 0.3s; 
+}
+
+#btncontact:hover {
+    background-color: white; 
+    color: black;
+}
+
+.terms {
+    margin-left: 60%;
+    margin-top: -4.55%;
+}
+
+#btnterms {
+    width: 150px;
+    background-color: #00CED1;
+    color: black;
+    transition: background-color 0.3s; 
+}
+
+#btnterms:hover {
+    background-color: white; 
+    color:black;
+}
