@@ -1,32 +1,41 @@
+.ns-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6%;
+    gap: 10px; /* Adds space between the elements */
+    max-width: 400px; 
+    margin-left: 120px;
+  }
+  
+  .ns-container label {
+    font-size: 14px;
+  }
+  
+  .ns-container input,
+  .ns-container select,
+  .ns-container textarea {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .ns-container button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ns-container button:hover {
+    background-color: #0056b3;
+  }
 
-.ns-container{
-    margin-top: 100px;
-    margin-left: 200px;
-}
-
-#ns-email
-{
-    width:40%;
-}
-
-#ns-message {
-    width:80%;
-}
-
-
-.ns-selectstatus{
-    margin-top: 30px;
-}
-#ns-selectstatus{
-    width:41.5%;
-    height:40px;
-}
-
-#ns-send{
-    margin-left:200px;
-    color:white;
-    background-color: black;
-    width:70px;
-    border-radius:5px;
-    height:40px;
-}
+  #ns-send{
+    width:120px;
+    margin-left: 10%;
+  }
+  

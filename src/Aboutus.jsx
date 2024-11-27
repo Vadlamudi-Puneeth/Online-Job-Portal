@@ -23,7 +23,7 @@ function Aboutus(){
             <h2 id="workfolio" onClick={handlehome}>Work Folio</h2> 
         </div>
 
-            <h1>Our Placed Students</h1>
+            <h1 id="au-heading">Our Placed Students</h1>
             <div className="au-first-three-persons-in-row">
                 
                 <div className="au-first-first">
