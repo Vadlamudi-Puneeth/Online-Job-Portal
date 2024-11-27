@@ -1,0 +1,39 @@
+use xyz;  // database name
+
+create table register_details(
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username varchar(255),
+    password varchar(255),
+    email varchar(255),
+    cpassword varchar(255)
+);
+
+select *from register_details;
+truncate register_details;
+
+CREATE TABLE application_details (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    fathername VARCHAR(255),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    contact VARCHAR(255),
+    course VARCHAR(255),
+    university VARCHAR(255),
+    passoutyear INT NOT NULL,
+    marks FLOAT(53) NOT NULL, 
+    country VARCHAR(255),
+    state VARCHAR(255),
+    district VARCHAR(255),
+    city VARCHAR(255),
+    pincode VARCHAR(6) NOT NULL,
+    DomainName VARCHAR(255),
+    skill1 VARCHAR(255),
+    skill2 VARCHAR(255),
+    skill3 VARCHAR(255)
+);
+
+select *from application_details;
+truncate application_details;
+
+
