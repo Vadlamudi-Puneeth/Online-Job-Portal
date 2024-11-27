@@ -1,0 +1,32 @@
+
+.ns-container{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+#ns-email
+{
+    width:40%;
+}
+
+#ns-message {
+    width:80%;
+}
+
+
+.ns-selectstatus{
+    margin-top: 30px;
+}
+#ns-selectstatus{
+    width:41.5%;
+    height:40px;
+}
+
+#ns-send{
+    margin-left:200px;
+    color:white;
+    background-color: black;
+    width:70px;
+    border-radius:5px;
+    height:40px;
+}

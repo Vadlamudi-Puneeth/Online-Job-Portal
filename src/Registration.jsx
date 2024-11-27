@@ -1,88 +1,138 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./register.css";
-import Logo from  "../src/rakesh.jpg";
-import "./TermsAndConditions.jsx"
+import React, { useState } from 'react';
+import './register.css'; 
+import RakeshImage from './rakesh.jpg';
+import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-function Registration() {
+const Registration = () => {
+    const navigate = useNavigate();
+    const [user, setUser] = useState({
+        username: '',
+        email: '',
+        password: '',
+        cpassword: '',
+    });
+
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [redirect, setRedirect] = useState(false); 
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        console.log(`Field changed: ${name} = ${value}`);
+        setUser({
+            ...user,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        setErrorMessage('');
+        setSuccessMessage('');
+
+        if (user.password !== user.cpassword) {
+            setErrorMessage("Passwords do not match.");
+            return;
+        }
+
+        try {
+            const response = await fetch('http://localhost:8082/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user),
+            });
+
+            if (!response.ok) {
+                console.error(`HTTP error! Status: ${response.status}`);
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            setSuccessMessage("Registration successful!");
+            setRedirect(true);
+            setUser({
+                username: '',
+                email: '',
+                password: '',
+                cpassword: '',
+            });
+        } catch (error) {
+            console.error('Error:', error);
+            setErrorMessage("Registration failed. Please try again.");
+        }
+    };
+
+    if (redirect) {
+        return <Navigate to="/Login" />; 
+    }
+
+    const handleWorkFolio = () =>{
+        navigate("/");
+    }
+
+
     return (
-        <div className = "reg" id = "registration">
-
-            <p id = "alr">
-                Already Registered? <Link to="/Login">login</Link> here
-            </p>
-            <h1 id = "heading">Create your Workfolio Profile</h1>
-            
-            <div className = "imgcont">
-
-                    <img id = "img-img" src = {Logo} alt = "not found" />
-              
-                
-                <div className = "container">
-                    <form action = "sucessfully submitted" >
-
-                    <div className = "divfirstName">
-                        <label for = "fname" className = "fname" ><strong>Full Name</strong></label>
-                        <input type = "text" id = "fname" class = "fname" placeholder = "  Fill your name" required autofocus></input><br></br>
-                    </div>
-
-                    <div className = "divemail" >
-                        <label for = "email" class = "email" ><strong>Email</strong></label>
-                        <input type = "email" id = "email" placeholder = "   example@gmail.com"  required></input><br></br>
-                    </div>
-
-                    <div className = "divpass" >
-                        <label for = "pawd" class = "password" ><strong>Password</strong></label>
-                        <input type = "password" id = "pawd" placeholder = "   Example@123"  required></input><br></br>
-                    </div>
-
-                    <div className = "divtel" >
-                        <label for = "mobile" className = "phoneno" ><strong>Phone no</strong></label>
-                        <input type = "tel" id = "mobile" placeholder = "   Enter your number" required></input><br></br>
-                    </div>
-
-                    <div className = "divdate" >
-                        <label for = "dob" className = "dob" ><strong>Date of Birth</strong></label>
-                        <input type = "Date" id = "dob" required></input><br></br>
-                    </div>
-
-                    <div className="divgender">
-                        <label for="gender"><strong>Gender</strong></label>
-                        <select id="gender" name="gender" required>
-                            <option value="Male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <div className="divnationality">
-                        <label for="nationality"><strong>Nationality</strong></label><br />
-                        <select id="nationality" name="nationality" required>
-                            <option value="Indian">Indian</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                        <br></br>
-                        <p id="tac">
-                    <label>
-                        <input type="checkbox" name="terms" required />
-                        <p id = "agree">
-                            I agree to the <a href="/TermsAndConditions">Terms and Conditions</a></p> 
-                        </label>
-                </p>
-                
-                        <button type = "submit" class = "finalbutton" >Register</button>
-
-                    </form>
-                </div>
-
-            </div>
-
-
-
+        <>
+                <div class = "reg-imgonly">
+            <img src = "https://cdn.prod.website-files.com/65efe5c22fe5c01bbd337a5f/65efef4c8c9490f23afeb120_60a0dbb1754e6b34267a8157_Icon%20File.svg" alt = "imagenotfound" ></img>
+            <h2 id="reg-workfolio" onClick={handleWorkFolio}>Work Folio</h2> 
         </div>
+
+        <div className="registration-container">
+            <div className="image-section">
+                <img src={RakeshImage} alt="Rakesh" className="side-image" />
+            </div>
+            <div className="form-section">
+                <h2 id="regtitle">Registration</h2>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                        value={user.username}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={user.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label htmlFor="cpassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        placeholder="Confirm password"
+                        name="cpassword"
+                        value={user.cpassword}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button id="btnreg" type="submit">Signup</button>
+                </form>
+
+                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+            </div>
+        </div></>
     );
-}
+};
 
 export default Registration;

@@ -1,16 +1,20 @@
-body{
-    /* background-color:#00CED1; */
-    background-color:white;
+.haf-image,
+.bodyHome {
+     background-image: url("./HomePagePic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    height: 120vh; 
+    width: 100%; 
+    margin-top: -100px;
 }
 
-.btnlog{
-    margin-left:73%;
-    margin-top: -60px;
-}
-
-.btnreg{
-    margin-top:-70px;
-    margin-left: 85%; 
+.three-button-container{
+    display: flex;
+    margin-top: 1%;
+    margin-left: 60%;
+    gap:15px;
+    flex-wrap: wrap;
 }
 
 button{
@@ -28,23 +32,46 @@ button{
 #hlog{
     height:40px;
     width:120px;
-    margin-left:20%;
+    margin-left:160%;
+    background-color: transparent;
+    color: white;
+    border:1px solid white ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-weight:bold;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 
 #hreg{
     height:40px;
     width:120px;
-    margin-top:30px;
-    margin-left:15%;
+    justify-content: center;
+    margin-top:15px;
+    margin-left:160%;
+    color: white;
+    border:1px solid white ;
+    border-radius: 5px;
+    display: flex;
+    font-weight:bold;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-button:hover {
-    background-color: #00CED1 ; /*#39FF14*/
-    color: black;
+#hreg:hover {
+    background-color: #8BC34A ; /*#39FF14*/
+    color: white;
 }
+
+#hlog:hover {
+    background-color: #8BC34A ; 
+    color: white;
+}
+
 
 .imgonly{
-    margin-top:20px;
+    margin-top:30px;
     display: flex;
     align-items: center;
     font-family: Calibri;
@@ -81,7 +108,6 @@ h2{
 #quote{
     font-size: 60px;
     font-family:perpetua;
-    /* color:#E0FFFF; */
     color:black;
     text-align:center;
 }
@@ -100,8 +126,8 @@ h2{
 }
 
 #get {
-    background-color: #00CED1;
-    color:black;
+    background-color: #8BC34A;
+    color:white;
     font-family:Oblique;
     font-size:22px;
     max-width: 350px; 
@@ -111,11 +137,16 @@ h2{
 .footer{
     margin-top:161px;
     height: 120px;
-    background-color:#00CED1;
+    display: flex;
+    background-color: white;
 }
 
 .copyright{
-    margin-left:20px;
+    display: flex;
+}
+
+.social-media-buttons{
+    margin: 50px -250px;
 }
 
 #twitter{
@@ -136,55 +167,159 @@ h2{
 
 .company{
     margin-left:40%;
-    margin-top:-70px;
+    margin-top:-190px;
 }
+
+.last-three-button{
+    display: flex;
+    margin-left: 40%;
+    margin-top: 10px;
+    gap: 15px;
+}
+
 .aboutus {
-    margin-left: 30%;
     margin-top: -5%;
 }
 
 #btnabout {
-    width: 150px;
-    background-color: #00CED1;
+    width: 120px;
+    background-color: white;
     color: black;
     transition: background-color 0.3s;
 }
 
 #btnabout:hover {
-    background-color: white;
+    text-decoration: underline;
     color:black; 
 }
 
 .contactus {
-    margin-left: 45%;
-    margin-top: -4.6%;
+    margin-top: -4.8%;
 }
 
 #btncontact {
-    width: 150px;
-    background-color: #00CED1;
+    width: 120px;
+    background-color: white;
     color: black;
     transition: background-color 0.3s; 
 }
 
 #btncontact:hover {
-    background-color: white; 
-    color: black;
+    text-decoration: underline;
+    color:black; 
 }
 
 .terms {
-    margin-left: 60%;
-    margin-top: -4.55%;
+    margin-top: -4.7%;
 }
 
 #btnterms {
-    width: 150px;
-    background-color: #00CED1;
-    color: black;
+    width: 120px;
+    background-color: white;
+    color:black;
     transition: background-color 0.3s; 
 }
 
 #btnterms:hover {
-    background-color: white; 
-    color:black;
+    text-decoration: underline;
+    color:black; 
 }
+
+.btn-mock-test{
+    margin-top: 70px;
+    margin-left: -80%;
+}
+.btnjobopen{
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+#mock-test,
+#jobopen{
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: -10000px;
+    width: 200px;
+    height:40px;
+    margin-left:120% ;
+    font-weight:bold;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#jobopen:hover{
+    background-color:#8BC34A;
+}
+
+#mock-test:hover{
+    background-color:#8BC34A;
+}
+
+/* The chatbot icon at the bottom-right */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8BC34A;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .chatbot-icon:hover {
+    background: transparent;
+  }
+  
+  .chatbot-modal {
+    position: fixed;
+    bottom: 80px; 
+    right: 5px;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .chatbot-header h3 {
+    margin: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #ff4d4d;
+  }
+  
+  /* The body of the chatbot modal (where the chatbot component is placed) */
+  .chatbot-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Optional: If you want the chatbot to be a bit more rounded */
+  .chatbot-modal {
+    border-radius: 12px;
+  }
+  

@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+ #job-apply-head{
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333;
+ }
+
+ #pd{
+    text-align: left;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333;
+ }
+
+ .personal-details-container{
+    background-color: white;
+ }
+
+ .firstname{
+    margin-top:40px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+ }
+
+.lastname,.fathername,.appemail,.appcontact{
+    margin-top:20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+ }
+
+#lastname,#fathername,#email,#firstname{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    border:1px solid black;
+    height:20px;
+    border-radius: 5px;
+ }
+
+ #contact{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    height:20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+ }
+
+ #eq{
+    text-align: left;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333;
+    margin-top: 50px;
+ }
+
+ .qualification-container{
+    background-color: white;
+ }
+
+ .course,.university,.passoutyear,.marks{
+    margin-top:20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+ }
+
+ 
+#course,#university,#passoutyear,#marks{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    border:1px solid black;
+    height:20px;
+    border-radius: 5px;
+ }
+
+ #marks{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    height:20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+ }
+
+ #adr{
+    text-align: left;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333;
+    margin-top: 50px;
+ }
+
+ .address-container{
+    background-color: white;
+ }
+ 
+ .country,.state,.district,.city,.pincode{
+    margin-top:20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+ }
+
+ 
+#country,#state,#district,#pincode,#city{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    border:1px solid black;
+    height:20px;
+    border-radius: 5px;
+ }
+
+ #pincode{
+    margin-top:15px;
+    margin-left: 20px;
+    width:22%;
+    height:20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+ }
+
+ 
+ #skills{
+    text-align: left;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #333;
+    margin-top: 50px;
+ }
+
+ .skills-container{
+    background-color: white;
+ }
+
+ .domainName{
+    margin-top:40px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: col;
+ }
+ 
+ .skill1,.skill2,.skill3{
+    margin-top:30px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: col;
+ }
+
+ #domainName{
+    margin-top:5px;
+    margin-left: 20px;
+    width:22%;
+    border:1px solid black;
+    height:20px;
+    border-radius: 5px;
+ }
+
+#skill1,#skill2,#skill3{
+    margin-top:15px;
+    margin-left: 75px;
+    width:22%;
+    border:1px solid black;
+    height:20px;
+    border-radius: 5px;
+ }
+
+ #skill1Level,#skill2Level,#skill3Level{
+    margin-top:20px;
+    height:30px;
+ }
+
+
+ #skill3{
+    margin-top:15px;
+    margin-left: 75px;
+    width:22%;
+    height:20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+ }
+
+ .gf-div{
+    margin-top:7%;
+    margin-left:-40%;
+    margin-bottom:30px;
+ }
