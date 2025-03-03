@@ -1,0 +1,76 @@
+/* jmt-head */
+#jmt-head {
+    margin-top: 2400px;
+}
+
+/* jmt-body */
+.jmt-body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    margin-left: -100px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* jmt-question-container */
+.jmt-question-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+}
+
+.jmt-question-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* jmt-option-container */
+.jmt-option-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.jmt-option-container input[type="radio"] {
+    margin-right: 10px;
+}
+
+.jmt-option-container label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* jmt-submit-btn */
+#jmt-submit-btn {
+    display: block;
+    width: 10%;
+    max-width: 700px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: -6%;
+}
+
+#jmt-submit-btn:hover {
+    background-color: #45a049;
+}

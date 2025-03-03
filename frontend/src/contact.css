@@ -1,0 +1,34 @@
+.contact-form-container{
+    margin-left: 30%;
+}
+#cu-head{
+    margin-left:17%;
+    font-size: 35px;
+}
+#cu-name,
+#cu-emailaddress
+{
+    width:400px;
+}
+.cu-email{
+    margin-top: 5%;
+    margin-left: 25%;
+}
+#cu-message{
+    height:100px;
+    width:700px;
+    text-align: left;
+    vertical-align: top;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#cu-send{
+    width:60px;
+    height:40px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    vertical-align: top;
+}

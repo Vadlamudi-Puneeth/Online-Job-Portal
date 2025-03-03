@@ -1,0 +1,41 @@
+.mt-four-button-container{
+    display: flex;
+    gap:20px;
+    margin-left:30%;
+    margin-top: 20px;
+}
+
+#mt-python,
+#mt-c,
+#mt-cpp,
+#mt-java{
+    color: blue;
+    width:100px;
+    border-radius: 5px;
+    background-color: transparent;
+    border:1px solid blue;
+}
+
+.mt-intro{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+#mt-feautures-head{
+    font-size: 25px;
+    margin-left: 40px;
+}
+
+.mt-cta{
+    margin-left: 40px;
+}
+
+#mt-footer-quote{
+    margin-top:30px;
+    margin-left: 40px;
+}
+
+#mt-heading{
+    align-items: center;
+    text-align: center;
+}

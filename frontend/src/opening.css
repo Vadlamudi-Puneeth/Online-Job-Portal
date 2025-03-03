@@ -1,0 +1,134 @@
+.haf-back{
+    margin-top:-3%;
+    margin-left:70%;
+    display: flex;
+    gap:10px;
+}
+
+#JobOpenings{
+    margin-left: 40%;
+    color: black;
+    font-size: 35px;
+}
+
+#notify-status,
+#haf-back{
+    height:40px;
+    width:160px;
+    background-color: black;
+    color: white;
+}
+
+.haf-container{
+    margin-left:5%;
+    margin-right:10%;
+    margin-top: 1%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px ;
+    grid-row: 10%;
+}
+
+.haf-softwaredeveloper,
+.haf-datascientist,
+.haf-projectmanager,
+.haf-uxdesign,
+.haf-marketingspecialist,
+.haf-Devopsengineer,
+.haf-cybersecurityanalyst,
+.haf-businessanalyst,
+.haf-aimlengineer,
+.haf-contentwriter,
+.haf-systemadministrator,
+.haf-hrmanager
+{
+    background-color: white;
+    box-shadow: 1px 1px;
+    border-radius: 10px;
+    height:150px;
+    width:400px;
+    column-gap: 120px;
+}
+
+#haf-hrmanager0,
+#haf-systemadministrator0,
+#haf-contentwriter0,
+#haf-aimlengineer0,
+#haf-businessanalyst0,
+#haf-cybersecurityanalyst0,
+#haf-Devopsengineer0,
+#haf-marketingspecialist0,
+#haf-uxdesign0,
+#haf-projectmanager0,
+#haf-softwaredeveloper0,
+#haf-datascientist0
+{
+    font-family: Verdana;
+    font-size:15px;
+}
+
+#haf-hrmanager1,
+#haf-systemadministrator1,
+#haf-contentwriter1,
+#haf-aimlengineer1,
+#haf-businessanalyst1,
+#haf-cybersecurityanalyst1,
+#haf-Devopsengineer1,
+#haf-marketingspecialist1,
+#haf-uxdesign1,
+#haf-projectmanager1,
+#haf-softwaredeveloper1,
+#haf-datascientist1
+{
+    font-size:13px;
+    margin-left:10px;
+}
+
+#haf-hrmanager2,
+#haf-systemadministrator2,
+#haf-contentwriter2,
+#haf-aimlengineer2,
+#haf-businessanalyst2,
+#haf-cybersecurityanalyst2,
+#haf-Devopsengineer2,
+#haf-marketingspecialist2,
+#haf-uxdesign2,
+#haf-projectmanager2,
+#haf-datascientist2,
+#haf-softwaredeveloper2{
+    font-size:13px;
+    margin-left:10px;
+}
+
+#haf-hrmanager3,
+#haf-systemadministrator3,
+#haf-contentwriter3,
+#haf-aimlengineer3,
+#haf-businessanalyst3,
+#haf-cybersecurityanalyst3,
+#haf-Devopsengineer3,
+#haf-marketingspecialist3,
+#haf-uxdesign3,
+#haf-projectmanager3,
+#haf-datascientist3,
+#haf-softwaredeveloper3{
+    margin-top:2px;
+    margin-left:10px;
+    width:380px;
+    color:white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.haf-foot{
+    height:100px;
+}

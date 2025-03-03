@@ -1,0 +1,73 @@
+.au-first-three-persons-in-row{
+    margin-left:7%;
+    margin-right:10%;
+    margin-top: 1%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px ;
+}
+
+.au-second-third,
+.au-second-second,
+.au-second-first,
+.au-first-third,
+.au-first-second,
+.au-first-first{
+    margin-right: 10px;
+    border: 1px solid black;
+    gap:30px;
+    height:60vh;
+    width:60vh;
+    background-color: white;
+    box-shadow: 1px 1px;
+    border-radius: 10px;
+}
+
+#au-sixth-image,
+#au-fifth-image,
+#au-fourth-image,
+#au-third-image,
+#au-second-image,
+#au-first-image{
+    margin-left: 30px;
+    margin-top: 10px;
+    height:40vh;
+    width:50vh;
+}
+
+#au-sixth-name,
+#au-fifth-name,
+#au-fourth-name,
+#au-third-name,
+#au-second-name,
+#au-first-name{
+    margin-left: 30px;
+    margin-top:5px;
+}
+
+#au-sixth-company,
+#au-fifth-company,
+#au-fourth-company,
+#au-third-company,
+#au-second-company,
+#au-first-company{
+    margin-left: 30px;
+    margin-top:-2px;
+    font-size: 14px;
+}
+
+#au-sixth-package,
+#au-fifth-package,
+#au-fourth-package,
+#au-third-package,
+#au-second-package,
+#au-first-package{
+    margin-left: 30px;
+    margin-top:-10px;
+    font-size: 14px;
+}
+
+#au-heading{
+    text-align: center;
+    font-size:35px;
+}

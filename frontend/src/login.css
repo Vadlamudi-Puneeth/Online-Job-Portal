@@ -1,0 +1,111 @@
+.first {
+    border-radius: 20%;
+    padding: 10px 60px;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 3%;
+    margin-top: -60px;
+}
+
+#lg {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+#bth {
+    width: 150px;
+    height: 50px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#bth:hover {
+    background-color: #0056b3;
+}
+
+.username-password {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    font-family: Arial, sans-serif;
+    width: 350px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+#username,
+#thisispass {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+
+
+#username:focus,
+#thisispass:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+#dha {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#dha a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#dha a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#lgn {
+    width: 150px;
+    height: 40px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#lgn:hover {
+    background-color: #218838;
+}
