@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { getAuth, getAuthHeader } from '../utils/auth';
 import { toast } from 'react-toastify';
 
-const API_BASE_URL = 'http://localhost:8082';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8082';
 
 const Profile = () => {
     const navigate = useNavigate();

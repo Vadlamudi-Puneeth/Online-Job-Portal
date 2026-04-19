@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getAuthHeader, isAuthenticated } from "../utils/auth";
 
-const API_BASE_URL = 'http://localhost:8082';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8082';
 
 function JobSearch() {
     const navigate = useNavigate();

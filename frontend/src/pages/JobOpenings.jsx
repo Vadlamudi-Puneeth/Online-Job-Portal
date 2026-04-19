@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAuth, getAuthHeader, isAdmin } from "../utils/auth";
 
-const API_BASE_URL = "http://localhost:8082";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8082";
 
 function JobOpenings() {
     const navigate = useNavigate();

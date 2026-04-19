@@ -3,7 +3,7 @@ import { Navigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_BASE_URL = 'http://localhost:8082';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8082';
 
 const Registration = () => {
     const [step, setStep] = useState(1); // 1: Email, 2: OTP, 3: Details

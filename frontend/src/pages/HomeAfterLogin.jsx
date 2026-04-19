@@ -6,7 +6,7 @@ import { clearAuth, getAuth, getAuthHeader } from "../utils/auth";
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 
-const API_BASE_URL = 'http://localhost:8082';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8082';
 
 function HomeAfterLogin() {
     const navigate = useNavigate();
