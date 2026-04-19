@@ -59,8 +59,7 @@ public class JobApplication {
     @Column(length = 255)
     private String cvFileName;
 
-    @Lob
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String cvFile;
 
     @Column(columnDefinition = "TEXT")

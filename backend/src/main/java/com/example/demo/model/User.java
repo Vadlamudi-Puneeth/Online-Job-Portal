@@ -36,8 +36,7 @@ public class User {
     @Column(length = 255)
     private String cvFileName;
 
-    @Lob
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String cvFile;
 
     public String getCvFileName() {

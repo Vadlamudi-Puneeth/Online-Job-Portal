@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ChatBot1 from "../components/ChatBot1";
 import { motion, AnimatePresence } from "framer-motion";
+import { isAuthenticated } from "../utils/auth";
 
 const API_BASE_URL = 'http://localhost:8082';
 
@@ -117,7 +118,11 @@ function Home() {
                                 <div className="text-brand-ocean font-bold text-sm uppercase tracking-widest">{job.companyName || "Top Tech"}</div>
                                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{job.title}</h3>
                                 <p className="text-gray-500 dark:text-gray-400">{job.location}</p>
-                                <button onClick={() => navigate("/JobDetails", { state: { job } })} className="text-brand-ocean font-bold hover:underline">View Details →</button>
+                                {isAuthenticated() ? (
+                                    <button onClick={() => navigate("/JobDetails", { state: { job } })} className="text-brand-ocean font-bold hover:underline">View Details →</button>
+                                ) : (
+                                    <button onClick={() => navigate("/Login")} className="text-brand-ocean font-bold hover:underline">Login to Apply →</button>
+                                )}
                             </motion.div>
                         )) : (
                             <p className="text-gray-500 italic">No featured jobs available.</p>

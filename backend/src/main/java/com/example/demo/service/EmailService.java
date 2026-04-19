@@ -19,15 +19,27 @@ public class EmailService {
     private final String senderName;
     private final ConcurrentHashMap<String, String> otpStorage = new ConcurrentHashMap<>();
 
+    private String readSecret(String key, Dotenv dotenv, String defaultValue) {
+        String envValue = System.getenv(key);
+        if (envValue != null && !envValue.isBlank()) {
+            return envValue;
+        }
+        String dotenvValue = dotenv.get(key);
+        if (dotenvValue != null && !dotenvValue.isBlank()) {
+            return dotenvValue;
+        }
+        return defaultValue;
+    }
+
     public EmailService() {
         Dotenv dotenv = Dotenv.configure()
                 .directory("./")
                 .ignoreIfMissing()
                 .load();
 
-        String apiKey = dotenv.get("BREVO_API_KEY");
-        this.senderEmail = dotenv.get("BREVO_SENDER_EMAIL");
-        this.senderName = dotenv.get("BREVO_SENDER_NAME", "Work Folio");
+        String apiKey = readSecret("BREVO_API_KEY", dotenv, null);
+        this.senderEmail = readSecret("BREVO_SENDER_EMAIL", dotenv, null);
+        this.senderName = readSecret("BREVO_SENDER_NAME", dotenv, "Work Folio");
 
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         ApiKeyAuth apiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("api-key");

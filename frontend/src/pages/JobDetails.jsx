@@ -109,7 +109,13 @@ function JobDetails() {
 
                         <div className="pt-6">
                             <button 
-                                onClick={() => !hasApplied && navigate("/JobApplication", { state: { domainName: job.title } })}
+                                onClick={() => {
+                                    if (!isAuthenticated()) {
+                                        navigate("/Login");
+                                    } else if (!hasApplied) {
+                                        navigate("/JobApplication", { state: { domainName: job.title } });
+                                    }
+                                }}
                                 disabled={hasApplied}
                                 className={`w-full py-5 text-white font-extrabold text-xl rounded-2xl shadow-xl transition-all transform ${
                                     hasApplied 

@@ -111,9 +111,11 @@ function JobSearch() {
                                 onChange={(e) => setFilters({...filters, experience: e.target.value})}
                             >
                                 <option value="">Any Experience</option>
-                                <option>0-2 Years</option>
-                                <option>3-5 Years</option>
-                                <option>5+ Years</option>
+                                <option>0-2 years</option>
+                                <option>2-4 years</option>
+                                <option>4-6 years</option>
+                                <option>6-8 years</option>
+                                <option>8+ years</option>
                             </select>
                         </div>
                         <div className="space-y-2">
@@ -126,7 +128,9 @@ function JobSearch() {
                                 <option value="">Any Type</option>
                                 <option>Full-time</option>
                                 <option>Part-time</option>
+                                <option>Contract</option>
                                 <option>Remote</option>
+                                <option>Internship</option>
                             </select>
                         </div>
                         <div className="flex items-end">
@@ -168,12 +172,23 @@ function JobSearch() {
                                             <span>🕒 {job.jobType || "Full-time"}</span>
                                         </div>
                                     </div>
-                                    <button 
-                                        onClick={() => navigate("/JobDetails", { state: { job } })}
-                                        className="mt-6 md:mt-0 px-8 py-3 bg-gray-100 dark:bg-gray-700 text-brand-ocean font-bold rounded-xl hover:bg-brand-ocean hover:text-white transition-all transform active:scale-95"
-                                    >
-                                        {myApplications.some(app => app.domainName.trim().toLowerCase() === job.title.trim().toLowerCase()) ? "View Info" : "View Details"}
-                                    </button>
+                                    {isAuthenticated() ? (
+                                        <button 
+                                            onClick={() => navigate("/JobDetails", { state: { job } })}
+                                            className="mt-6 md:mt-0 px-8 py-3 bg-gray-100 dark:bg-gray-700 text-brand-ocean font-bold rounded-xl hover:bg-brand-ocean hover:text-white transition-all transform active:scale-95"
+                                        >
+                                            {myApplications.some(app => app.domainName.trim().toLowerCase() === job.title.trim().toLowerCase()) ? "View Info" : "View Details"}
+                                        </button>
+                                    ) : (
+                                        <div className="flex space-x-3 mt-6 md:mt-0">
+                                            <button 
+                                                onClick={() => navigate("/Login")}
+                                                className="px-6 py-3 bg-brand-ocean text-white font-bold rounded-xl hover:bg-blue-700 transition-all transform active:scale-95 shadow-md"
+                                            >
+                                                Apply Now
+                                            </button>
+                                        </div>
+                                    )}
                                 </motion.div>
                             )) : (
                                 <div className="text-center py-20 bg-white dark:bg-gray-800 rounded-3xl shadow">
@@ -193,7 +208,7 @@ function JobSearch() {
                             <motion.div 
                                 key={`suggested-${job.id}`}
                                 className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hover:scale-105 transition-transform cursor-pointer"
-                                onClick={() => navigate("/JobDetails", { state: { job } })}
+                                onClick={() => isAuthenticated() ? navigate("/JobDetails", { state: { job } }) : navigate("/Login")}
                             >
                                 <div className="text-purple-600 font-bold text-xs uppercase mb-2 flex items-center justify-between">
                                     <span>{job.companyName}</span>

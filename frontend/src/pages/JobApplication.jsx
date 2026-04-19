@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { getAuth, getAuthHeader } from "../utils/auth";
+import { getAuth, getAuthHeader, isAuthenticated } from "../utils/auth";
 
 const API_BASE_URL = "http://localhost:8082";
 
@@ -13,6 +13,12 @@ function JobApplication() {
 
     const [redirect, setRedirect] = useState(false);
     const [submitting, setSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (!isAuthenticated()) {
+            navigate("/Login");
+        }
+    }, [navigate]);
 
     const [formData, setFormData] = useState({
         firstname: auth?.username || '',
