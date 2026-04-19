@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Configuration
 public class DataSourceConfig {
@@ -20,20 +22,36 @@ public class DataSourceConfig {
     private String password;
 
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource() throws URISyntaxException {
         String jdbcUrl = databaseUrl;
         
+        DataSourceBuilder<?> builder = DataSourceBuilder.create();
+
         // If the URL comes from Render/Heroku and starts with postgresql:// or postgres://
-        if (jdbcUrl != null && !jdbcUrl.startsWith("jdbc:")) {
-            jdbcUrl = jdbcUrl.replace("postgresql://", "jdbc:postgresql://")
-                             .replace("postgres://", "jdbc:postgresql://");
+        if (jdbcUrl != null && (jdbcUrl.startsWith("postgresql://") || jdbcUrl.startsWith("postgres://"))) {
+            URI dbUri = new URI(jdbcUrl);
+            
+            if (dbUri.getUserInfo() != null) {
+                String[] userInfo = dbUri.getUserInfo().split(":");
+                builder.username(userInfo[0]);
+                if (userInfo.length > 1) {
+                    builder.password(userInfo[1]);
+                }
+            }
+            
+            // Reconstruct the neat jdbcUrl without user/pass
+            String port = dbUri.getPort() != -1 ? ":" + dbUri.getPort() : "";
+            jdbcUrl = "jdbc:postgresql://" + dbUri.getHost() + port + dbUri.getPath();
+            
+            // If there's a query string (like ?sslmode=require), append it!
+            if (dbUri.getQuery() != null) {
+                jdbcUrl += "?" + dbUri.getQuery();
+            }
         }
 
-        DataSourceBuilder<?> builder = DataSourceBuilder.create()
-                .url(jdbcUrl);
+        builder.url(jdbcUrl);
 
-        // Render URLs often have the credentials embedded in the URL.
-        // If they are explicitly provided in environment variables, we set them here.
+        // Explicit environment variables override URI ones
         if (username != null && !username.isEmpty()) {
             builder.username(username);
         }
