@@ -7,11 +7,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
     @Override
-    public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry){
+    public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000","https://online-job-portal-ten.vercel.app/")
-
-                .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
+                .allowedOrigins("http://localhost:3000", "https://online-job-portal-ten.vercel.app",
+                        "https://online-job-portal-ten.vercel.app/", "https://online-job-portal-gilt.vercel.app",
+                        "https://online-job-portal-gilt.vercel.app/")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }

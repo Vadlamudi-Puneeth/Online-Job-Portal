@@ -35,15 +35,16 @@ public class SecurityConfig {
                 .userDetailsService(customUserDetailsService)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register", "/api/auth/login", "/api/auth/send-otp", "/api/auth/verify-otp", "/error").permitAll()
+                        .requestMatchers("/api/auth/register", "/api/auth/login", "/api/auth/send-otp",
+                                "/api/auth/verify-otp", "/error")
+                        .permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/jobs/**").hasAnyRole("ADMIN", "RECRUITER")
                         .requestMatchers(HttpMethod.PUT, "/api/jobs/**").hasAnyRole("ADMIN", "RECRUITER")
                         .requestMatchers(HttpMethod.DELETE, "/api/jobs/**").hasAnyRole("ADMIN", "RECRUITER")
                         .requestMatchers(HttpMethod.GET, "/api/jobs", "/api/jobs/**").permitAll()
                         .requestMatchers("/api/jobapplication/notify").hasAnyRole("ADMIN", "RECRUITER")
                         .requestMatchers("/api/jobapplication/**").authenticated()
-                        .anyRequest().authenticated()
-                )
+                        .anyRequest().authenticated())
                 .httpBasic(basic -> {
                 });
 
@@ -56,14 +57,17 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+            throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:3000", "https://online-job-portal-ten.vercel.app"));
+        configuration.setAllowedOrigins(List.of("http://localhost:3000", "https://online-job-portal-ten.vercel.app",
+                "https://online-job-portal-ten.vercel.app/", "https://online-job-portal-gilt.vercel.app/",
+                "https://online-job-portal-gilt.vercel.app"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);

@@ -59,6 +59,7 @@ const Login = () => {
                                     type="email" 
                                     name="email" 
                                     required 
+                                    autoComplete="username"
                                     onChange={handleChange}
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-ocean outline-none transition-all"
                                     placeholder="Enter your email" 
@@ -70,6 +71,7 @@ const Login = () => {
                                     type="password" 
                                     name="password" 
                                     required 
+                                    autoComplete="current-password"
                                     onChange={handleChange}
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-ocean outline-none transition-all"
                                     placeholder="••••••••" 
